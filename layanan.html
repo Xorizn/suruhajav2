@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan SuruhAja - Bebas Request Apa Aja</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#003040',
+                            yellow: '#FCBF45',
+                            teal: '#002828',
+                            light: '#F8FAFC',
+                            gray: '#64748B'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'float': '0 20px 40px -10px rgba(0,48,64,0.15)',
+                        'glow': '0 0 20px rgba(252, 191, 69, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-pattern {
+            background-image: radial-gradient(#FCBF45 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-navy antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Updated -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <img src="assets/images/logo/logo-black.png" alt="SuruhAja" class="h-10 w-auto">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-brand-gray font-medium hover:text-brand-yellow transition-colors">Home</a>
+                    <a href="layanan.html" class="text-brand-navy font-bold hover:text-brand-yellow transition-colors">Layanan</a>
+                    <a href="mitra.html" class="text-brand-gray font-medium hover:text-brand-navy transition-colors">Jadi Mitra</a>
+                    <a href="about.html" class="text-brand-gray font-medium hover:text-brand-navy transition-colors">Tentang Kami</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="login.html" class="text-brand-navy font-bold hover:text-brand-yellow transition-colors">Masuk</a>
+                    <a href="detail-layanan.html" class="bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-teal transition-all hover:shadow-lg hover:-translate-y-0.5">
+                        Pesan Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-navy hover:text-brand-yellow focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 px-4 pt-2 pb-6 space-y-2 shadow-lg absolute w-full left-0 top-20">
+            <a href="index.html" class="block px-3 py-2 text-brand-gray font-medium hover:bg-brand-light rounded-md">Home</a>
+            <a href="layanan.html" class="block px-3 py-2 text-brand-navy font-bold bg-brand-light rounded-md">Layanan</a>
+            <a href="mitra.html" class="block px-3 py-2 text-brand-gray font-medium hover:text-brand-navy hover:bg-brand-light rounded-md">Jadi Mitra</a>
+            <a href="about.html" class="block px-3 py-2 text-brand-gray font-medium hover:text-brand-navy hover:bg-brand-light rounded-md">Tentang Kami</a>
+            <div class="border-t border-gray-100 my-2 pt-2">
+                <a href="login.html" class="block px-3 py-2 text-brand-navy font-bold hover:bg-brand-light rounded-md">Masuk Akun</a>
+                <a href="detail-layanan.html" class="block mt-2 w-full text-center bg-brand-navy text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-teal-700 transition-all">Pesan Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Search Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-pattern z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <div class="inline-block bg-brand-light px-4 py-2 rounded-full shadow-sm border border-gray-100 mb-6">
+                <span class="text-brand-yellow font-bold mr-2">✨ Apapun Bisa</span>
+                <span class="text-sm font-medium text-brand-gray">Nggak ada menu yang kaku di sini</span>
+            </div>
+            
+            <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">
+                Mau Dibantu Apa Hari Ini?
+            </h1>
+            <p class="text-lg text-brand-gray mb-10 max-w-2xl mx-auto">
+                Ketik aja kebutuhanmu. Mau yang normal sampai yang aneh-aneh (selama legal), mitra kami siap bantu.
+            </p>
+
+            <!-- Big Search Bar -->
+            <form action="detail-layanan.html" class="relative max-w-2xl mx-auto group">
+                <div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-brand-gray text-xl group-focus-within:text-brand-yellow transition-colors"></i>
+                </div>
+                <input type="text" class="block w-full pl-14 pr-40 py-5 rounded-full border-2 border-gray-100 bg-white shadow-soft text-lg focus:ring-0 focus:border-brand-yellow focus:shadow-glow outline-none transition-all" placeholder="Contoh: titip kopi, antar dokumen, antri tiket...">
+                <div class="absolute inset-y-0 right-2 flex items-center">
+                    <button type="submit" class="bg-brand-yellow text-brand-navy font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition-colors shadow-sm">
+                        Suruh Sekarang
+                    </button>
+                </div>
+            </form>
+            
+            <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm text-brand-gray">
+                <span>Pencarian populer:</span>
+                <a href="detail-layanan.html" class="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">Titip Belanja</a>
+                <a href="detail-layanan.html" class="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">Ambil Kunci</a>
+                <a href="detail-layanan.html" class="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors">Antre RS</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16 bg-brand-light" id="custom-request">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold mb-8 text-brand-navy">Ide Bantuan Buat Kamu</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Highlighted Custom Request Card -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-brand-navy text-white p-8 rounded-3xl shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer group relative overflow-hidden flex flex-col h-full border-2 border-brand-navy hover:border-brand-yellow">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full filter blur-2xl group-hover:bg-brand-yellow/20 transition-all"></div>
+                    
+                    <div class="w-16 h-16 bg-brand-yellow rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                        <i class="fa-solid fa-wand-magic-sparkles text-3xl text-brand-navy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Bebas Custom Request</h3>
+                    <p class="text-gray-300 mb-8 flex-grow">Tidak menemukan kategori yang pas? Tulis saja instruksi spesifikmu di sini. Kami carikan mitra yang sanggup mengerjakannya.</p>
+                    
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
+                        Buat Request Sendiri <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card: Titip Belanja -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
+                    <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-basket-shopping text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Titip Belanja & Beli Makanan</h3>
+                    <p class="text-brand-gray mb-8 flex-grow">Nitip belanjaan di pasar tradisional, beli obat di apotek, atau makanan yang nggak ada di app sebelah.</p>
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card: Antar / Ambil Barang -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-box-open text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Ambil / Antar Barang</h3>
+                    <p class="text-brand-gray mb-8 flex-grow">Kunci tertinggal di kosan? Butuh kirim dokumen cepat ke bos? Serahkan pada kurir custom kami.</p>
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card: Antri / Booking -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
+                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-ticket text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Antre & Booking Tempat</h3>
+                    <p class="text-brand-gray mb-8 flex-grow">Mager antre tiket konser, pendaftaran rumah sakit, atau sekadar booking tempat nongkrong yang rame?</p>
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card: Teman / Pendamping -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
+                    <div class="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-group text-3xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Teman Belanja / Nonton</h3>
+                    <p class="text-brand-gray mb-8 flex-grow">Nggak ada temen buat nemenin kondangan atau nonton ke bioskop? Request pendamping profesional di sini.</p>
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Service Card: Bebes-beres -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
+                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-broom text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Beres-beres Kosan</h3>
+                    <p class="text-brand-gray mb-8 flex-grow">Kosan berantakan banget tapi sibuk nugas? Panggil mitra bantu bersihkan kamar secara instan.</p>
+                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section / CTA -->
+    <section class="py-20 bg-brand-yellow text-brand-navy">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold mb-6">Nggak Nemu Layanan yang Pas?</h2>
+            <p class="text-xl font-medium text-brand-navy/80 mb-10">
+                Itu cuma contoh! Konsep utama kami adalah fleksibilitas. Apapun bantuan yang kamu perlukan, ceritakan saja ke form kami.
+            </p>
+            <button onclick="window.location.href='detail-layanan.html'" class="bg-white text-brand-navy px-10 py-5 rounded-full font-bold text-lg hover:shadow-float hover:-translate-y-1 transition-all duration-300 shadow-md flex items-center justify-center gap-3 mx-auto">
+                <i class="fa-solid fa-pen-nib text-xl"></i> Tulis Kebutuhanmu Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="bg-brand-navy text-gray-300 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="col-span-1 md:col-span-2">
+                    <!-- Footer Logo Updated (White Version) -->
+                    <a href="index.html" class="flex items-center mb-4 cursor-pointer">
+                        <img src="assets/images/logo/logo-white.png" alt="SuruhAja" class="h-10 w-auto">
+                    </a>
+                    <p class="mb-6 max-w-sm">Memberdayakan tenaga kerja lokal untuk menyediakan solusi jasa titip dan suruh-suruh yang fleksibel, aman, dan efisien.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-navy transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-navy transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                      
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Perusahaan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-brand-yellow transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition-colors">Karir</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition-colors">Blog / Campaign</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="layanan.html" class="hover:text-brand-yellow transition-colors text-brand-yellow">Bantuan Pengguna</a></li>
+                        <li><a href="mitra.html" class="hover:text-brand-yellow transition-colors">Daftar Jadi Mitra</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition-colors">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-brand-yellow transition-colors">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 PT Mulai Tanpa Modal (SuruhAja). All rights reserved.</p>
+                <p class="mt-2 md:mt-0"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
