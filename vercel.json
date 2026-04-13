@@ -1,8 +1,10 @@
 {
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1.html"
-    }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/layanan", "destination": "/layanan.html" },
+    { "source": "/detail-layanan", "destination": "/detail-layanan.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/mitra", "destination": "/mitra.html" }
   ]
 }
