@@ -1,10 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/layanan", "destination": "/layanan.html" },
-    { "source": "/detail-layanan", "destination": "/detail-layanan.html" },
-    { "source": "/login", "destination": "/login.html" },
-    { "source": "/mitra", "destination": "/mitra.html" }
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/layanan", "dest": "/layanan.html" },
+    { "src": "/detail-layanan", "dest": "/detail-layanan.html" },
+    { "src": "/login", "dest": "/login.html" },
+    { "src": "/mitra", "dest": "/mitra.html" }
   ]
 }
