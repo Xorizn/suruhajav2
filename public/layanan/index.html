@@ -60,7 +60,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo Updated -->
                 <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="assets/images/logo/logo-black.png" alt="SuruhAja" class="h-10 w-auto">
+                    <img src="assets/images/logo/logo-black.png" alt="SuruhAja" class="h-10 w-auto" onerror="this.src='https://placehold.co/120x40?text=SuruhAja'">
                 </a>
 
                 <!-- Desktop Menu -->
@@ -149,83 +149,156 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Highlighted Custom Request Card -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-brand-navy text-white p-8 rounded-3xl shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer group relative overflow-hidden flex flex-col h-full border-2 border-brand-navy hover:border-brand-yellow">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full filter blur-2xl group-hover:bg-brand-yellow/20 transition-all"></div>
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-brand-navy text-white rounded-3xl shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer group relative overflow-hidden flex flex-col h-full border-2 border-brand-navy hover:border-brand-yellow">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full filter blur-2xl group-hover:bg-brand-yellow/20 transition-all z-0"></div>
                     
-                    <div class="w-16 h-16 bg-brand-yellow rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                        <i class="fa-solid fa-wand-magic-sparkles text-3xl text-brand-navy"></i>
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0">
+                        <!-- Dark overlay for contrast -->
+                        <div class="absolute inset-0 bg-brand-navy/60 z-10 group-hover:bg-brand-navy/40 transition-colors"></div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Bebas Custom Request" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Floating Icon -->
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-brand-yellow border-2 border-brand-navy rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-navy"></i>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white">Bebas Custom Request</h3>
-                    <p class="text-gray-300 mb-8 flex-grow">Tidak menemukan kategori yang pas? Tulis saja instruksi spesifikmu di sini. Kami carikan mitra yang sanggup mengerjakannya.</p>
                     
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
-                        Buat Request Sendiri <i class="fa-solid fa-arrow-right"></i>
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow relative z-20">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Bebas Custom Request</h3>
+                        <p class="text-gray-300 mb-8 flex-grow">Tidak menemukan kategori yang pas? Tulis saja instruksi spesifikmu di sini. Kami carikan mitra yang sanggup mengerjakannya (selama legal dan aman).</p>
+                        
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-semibold">Mulai Rp 15rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-yellow font-bold group-hover:gap-4 transition-all">
+                                Buat Request <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card: Titip Belanja -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
-                    <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-basket-shopping text-3xl text-orange-500"></i>
+                <!-- Service Card: Tangkap Ular -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full overflow-hidden">
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0 bg-gray-50">
+                        <img src="/assets/images/tangkapular.png" alt="Tangkap Ular & Hewan Liar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <!-- Floating Icon -->
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-red-50 border-2 border-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-2xl text-red-500"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Titip Belanja & Beli Makanan</h3>
-                    <p class="text-brand-gray mb-8 flex-grow">Nitip belanjaan di pasar tradisional, beli obat di apotek, atau makanan yang nggak ada di app sebelah.</p>
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
-                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-brand-navy">Tangkap Ular & Evakuasi Liar</h3>
+                        <p class="text-brand-gray mb-8 flex-grow">Ada ular masuk dapur, tokek nyasar, atau biawak nongkrong di plafon rumah? Tenang, mitra pemberani kami siap turun tangan evakuasi.</p>
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-red-50 text-red-600 px-3 py-1 rounded-full text-sm font-bold">Mulai Rp 150rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                                Detail <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card: Antar / Ambil Barang -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-box-open text-3xl text-blue-500"></i>
+                <!-- Service Card: Bersihin WC -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full overflow-hidden">
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0 bg-gray-50">
+                        <img src="/assets/images/bersihinwc.png" alt="Bersihin WC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-cyan-50 border-2 border-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-toilet text-2xl text-cyan-500"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Ambil / Antar Barang</h3>
-                    <p class="text-brand-gray mb-8 flex-grow">Kunci tertinggal di kosan? Butuh kirim dokumen cepat ke bos? Serahkan pada kurir custom kami.</p>
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
-                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-brand-navy">Bersihin WC Terjun Bebas</h3>
+                        <p class="text-brand-gray mb-8 flex-grow">Kerak membandel di kamar mandi kosan bikin males mandi? Serahkan pada spesialis sikat WC kami sampai kinclong parah.</p>
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-sm font-bold">Mulai Rp 50rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                                Detail <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card: Antri / Booking -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
-                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-ticket text-3xl text-purple-500"></i>
+                <!-- Service Card: Labrak Teman -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full overflow-hidden">
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0 bg-gray-50">
+                        <img src="/assets/images/labrak.png" alt="Jasa Labrak Teman" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-rose-50 border-2 border-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullhorn text-2xl text-rose-500"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Antre & Booking Tempat</h3>
-                    <p class="text-brand-gray mb-8 flex-grow">Mager antre tiket konser, pendaftaran rumah sakit, atau sekadar booking tempat nongkrong yang rame?</p>
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
-                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-brand-navy">Jasa Labrak Teman</h3>
+                        <p class="text-brand-gray mb-8 flex-grow">Punya teman yang utangnya susah ditagih atau jago banget nge-ghosting? Mitra kami bisa tolong labrak atau sampaikan pesan menohok.</p>
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-rose-50 text-rose-600 px-3 py-1 rounded-full text-sm font-bold">Mulai Rp 75rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                                Detail <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card: Teman / Pendamping -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
-                    <div class="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-user-group text-3xl text-pink-500"></i>
+                <!-- Service Card: Blanja Ke Pasar -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full overflow-hidden">
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0 bg-gray-50">
+                        <img src="/assets/images/pasar.png" alt="Belanja ke Pasar Tradisional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-green-50 border-2 border-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-store text-2xl text-green-600"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Teman Belanja / Nonton</h3>
-                    <p class="text-brand-gray mb-8 flex-grow">Nggak ada temen buat nemenin kondangan atau nonton ke bioskop? Request pendamping profesional di sini.</p>
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
-                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-brand-navy">Belanja ke Pasar Subuh</h3>
+                        <p class="text-brand-gray mb-8 flex-grow">Males bangun pagi buat rebutan sayuran segar di pasar tumpah? Tulis daftar belanjamu, kami yang becek-becekan, kamu tinggal masak.</p>
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Mulai Rp 25rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                                Detail <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service Card: Bebes-beres -->
-                <div onclick="window.location.href='detail-layanan.html'" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full">
-                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-broom text-3xl text-green-500"></i>
+                <!-- Service Card: Stalking Teman -->
+                <div onclick="window.location.href='detail-layanan.html'" class="bg-white rounded-3xl shadow-sm hover:shadow-float hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 group flex flex-col h-full overflow-hidden">
+                    <!-- Image Header -->
+                    <div class="relative h-48 w-full overflow-hidden shrink-0 bg-gray-50">
+                        <img src="/assets/images/stalking.png" alt="Stalking Teman / Intelijen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-6 z-20 w-14 h-14 bg-slate-100 border-2 border-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-secret text-2xl text-slate-700"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-navy">Beres-beres Kosan</h3>
-                    <p class="text-brand-gray mb-8 flex-grow">Kosan berantakan banget tapi sibuk nugas? Panggil mitra bantu bersihkan kamar secara instan.</p>
-                    <div class="mt-auto inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
-                        Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Content -->
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-brand-navy">Jasa Kepo / Intel (Stalking)</h3>
+                        <p class="text-brand-gray mb-8 flex-grow">Butuh intel buat nyari tau gebetan lagi hangout sama siapa atau sekadar memastikan teman bohong sakit atau nggak? Serahkan ke ahlinya.</p>
+                        <div class="mt-auto flex items-center justify-between w-full">
+                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-bold">Mulai Rp 100rb</span>
+                            <div class="inline-flex items-center gap-2 text-brand-navy font-bold group-hover:text-brand-yellow transition-colors">
+                                Detail <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+
+
 
     <!-- Highlight Section / CTA -->
     <section class="py-20 bg-brand-yellow text-brand-navy">
@@ -248,7 +321,7 @@
                 <div class="col-span-1 md:col-span-2">
                     <!-- Footer Logo Updated (White Version) -->
                     <a href="index.html" class="flex items-center mb-4 cursor-pointer">
-                        <img src="assets/images/logo/logo-white.png" alt="SuruhAja" class="h-10 w-auto">
+                        <img src="assets/images/logo/logo-white.png" alt="SuruhAja" class="h-10 w-auto" onerror="this.src='https://placehold.co/120x40?text=SuruhAja'">
                     </a>
                     <p class="mb-6 max-w-sm">Memberdayakan tenaga kerja lokal untuk menyediakan solusi jasa titip dan suruh-suruh yang fleksibel, aman, dan efisien.</p>
                     <div class="flex gap-4">
